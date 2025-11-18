@@ -16,7 +16,9 @@ This is all feature the app can do:
 ## How to use
 
 NOTE: I don't know how to call the app with short name at anywhere so it will have a little inconvenient
+
 Command:
+
 python main.py add "TASK"
 
 python main.py list
