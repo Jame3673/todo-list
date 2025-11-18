@@ -19,15 +19,15 @@ NOTE: I don't know how to call the app with short name at anywhere so it will ha
 
 Command:
 
-python main.py add "TASK" --> python main.py add "buy milk"
+- python main.py add "TASK" --> python main.py add "buy milk"
 
-python main.py list
+- python main.py list
 
-python main.py done ID --> the ID start from 1. For instance, python main.py done 1
+- python main.py done ID --> the ID start from 1. For instance, python main.py done 1
 
-python main.py remove ID --> the ID start from 1. For instance, python main.py remove 1
-python main.py rem ID --> for short
+- python main.py remove ID --> the ID start from 1. For instance, python main.py remove 1
+- python main.py rem ID --> for short
 
-python main.py reset
-python main.py res --> for short
+- python main.py reset
+- python main.py res --> for short
 
