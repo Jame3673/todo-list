@@ -69,34 +69,42 @@ if len(sys.argv) < 2:
     print("  python main.py remove <id>")
     sys.exit(1)
 
-command = sys.argv[1]
 
-if command == "add":
-    add(" ".join(sys.argv[2:]))
-elif command == "list":
-    list_tasks()
-elif command == "done":
-    if len(sys.argv) < 3:
-        print("Missing ID. Usage: python main.py done <id>")
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Commands: add, list, del, delete, res, reset")
+        sys.exit(1)
+
+    command = sys.argv[1]
+
+    if command == "add":
+        add(" ".join(sys.argv[2:]))
+    elif command == "list":
+        list_tasks()
+    elif command == "done":
+        if len(sys.argv) < 3:
+            print("Missing ID. Usage: python main.py done <id>")
+        else:
+            done(int(sys.argv[2]))
+
+    elif command in ("rem", "remove"):
+        if len(sys.argv) < 3:
+            print('Missing ID. Usage: python main.py del <id>')
+        else:
+            try:
+                id_to_remove = int(sys.argv[2])
+            except ValueError:
+                print("ID must be a number")
+            else:
+                remove(id_to_remove)
+
+    elif command in ("res", "reset"):
+        reset()
+
     else:
-        done(int(sys.argv[2]))
+        print("command not found")
 
-elif command == "rem":      #A shorter command
-    if len(sys.argv) < 3:
-        print("Missing ID. Usage: python main.py done <id>")
-    else:
-        remove(int(sys.argv[2]))
-elif command == "remove":
-    if len(sys.argv) < 3:
-        print("Missing ID. Usage: python main.py done <id>")
-    else:
-        remove(int(sys.argv[2]))
-
-elif command == "res":      #A shorter command
-    reset()
-elif command == "reset":
-    reset()
-
-
-else:
-    print("command not found")
+if __name__ == "__main__":
+    main()
